@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { VendorNavbar } from "./VendorNavbar";
 
 export const VenderSidebar = () => {
@@ -52,13 +52,13 @@ export const VenderSidebar = () => {
               data-accordion="false"
             >
               <li className="nav-item menu-open">
-                <a href="#" className="nav-link active">
+                <Link to="addproduct" className="nav-link active">
                   <i className="nav-icon bi bi-speedometer" />
                   <p>
-                    Dashboard
+                    ADD PRODUCT
                     <i className="nav-arrow bi bi-chevron-right" />
                   </p>
-                </a>
+                </Link>
                 <ul className="nav nav-treeview">
                   <li className="nav-item">
                     <a href="./index.html" className="nav-link active">
