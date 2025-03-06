@@ -13,26 +13,27 @@ import { VenderSidebar } from "./components/vendor/VendorSidebar";
 import { Signup } from "./components/common/Signup";
 import axios from "axios";
 import { Login } from "./components/common/Login";
+import PrivateRoutes from "./components/hooks/PrivateRoutes";
 
 function App() {
-
   axios.defaults.baseURL = "http://localhost:8000";
-
 
   return (
     <body className="layout-fixed sidebar-expand-lg bg-body-tertiary sidebar-open app-loaded">
       <div className="app-wrapper">
         <Routes>
-          <Route path="/signup" element = {<Signup/>}></Route>
-          <Route path="/login" element = {<Login/>}></Route>
-          
-          <Route path="/user" element={<UserSidebar />}>
-            <Route path="dashboard" element={<UserDashboard />}></Route>
-            <Route path="profile" element={<UserProfile />}></Route>
-          </Route>
+          <Route path="/signup" element={<Signup />}></Route>
+          <Route path="/login" element={<Login />}></Route>
 
-          <Route path="/vendor" element={<VenderSidebar />}>
-            <Route path="addproduct" element={<AddProduct />}></Route>
+          <Route element={<PrivateRoutes />}>
+            <Route path="/user" element={<UserSidebar />}>
+              <Route path="dashboard" element={<UserDashboard />}></Route>
+              <Route path="profile" element={<UserProfile />}></Route>
+            </Route>
+
+            <Route path="/vendor" element={<VenderSidebar />}>
+              <Route path="addproduct" element={<AddProduct />}></Route>
+            </Route>
           </Route>
         </Routes>
       </div>
