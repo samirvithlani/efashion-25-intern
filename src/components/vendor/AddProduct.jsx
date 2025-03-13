@@ -11,7 +11,7 @@ export const AddProduct = () => {
     data.vendor_id = localStorage.getItem("id")
     data.price = parseFloat(data.price)
     console.log(data)
-    const res = await axios.post("/create_product",data)
+    const res = await axios.post("/create_product_file",data)
     console.log(res.data)
     //post
   }

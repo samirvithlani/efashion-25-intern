@@ -14,6 +14,7 @@ import { Signup } from "./components/common/Signup";
 import axios from "axios";
 import { Login } from "./components/common/Login";
 import PrivateRoutes from "./components/hooks/PrivateRoutes";
+import { AddProductWithFile } from "./components/vendor/AddProductWithFile";
 
 function App() {
   axios.defaults.baseURL = "http://localhost:8000";
@@ -32,7 +33,7 @@ function App() {
             </Route>
 
             <Route path="/vendor" element={<VenderSidebar />}>
-              <Route path="addproduct" element={<AddProduct />}></Route>
+              <Route path="addproduct" element={<AddProductWithFile />}></Route>
             </Route>
           </Route>
         </Routes>
