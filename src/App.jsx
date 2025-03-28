@@ -16,6 +16,7 @@ import { Login } from "./components/common/Login";
 import PrivateRoutes from "./components/hooks/PrivateRoutes";
 import { AddProductWithFile } from "./components/vendor/AddProductWithFile";
 import { ResetPassword } from "./components/common/ResetPassword";
+import { ChartDemo1 } from "./components/charts/ChartDemo1";
 
 function App() {
   axios.defaults.baseURL = "http://localhost:8000";
@@ -27,6 +28,7 @@ function App() {
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/resetpassword/:token" element ={<ResetPassword/>}></Route>
+          <Route path="/chart" element ={<ChartDemo1/>}></Route>
 
           <Route element={<PrivateRoutes />}>
             <Route path="/user" element={<UserSidebar />}>
